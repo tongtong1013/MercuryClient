@@ -19,7 +19,8 @@ namespace Mercury
         {
             string method = "POST";
             string url = "http://localhost/loginService.php";
-            string data = "id=" + id + "&password=" + password;
+            //string data = "id=" + id + "&password=" + password;
+            string data = Newtonsoft.Json.JsonConvert.SerializeObject(this);
             string response = this.HttpPost(method, url, data);
             Repmsg repmsg = Newtonsoft.Json.JsonConvert.DeserializeObject(response, typeof(Repmsg)) as Repmsg;
             bool result;
@@ -38,7 +39,8 @@ namespace Mercury
         {
             string method = "POST";
             string url = "http://localhost/registerService.php";
-            string data = "id=" + id + "&password=" + password;
+            //string data = "id=" + id + "&password=" + password;
+            string data = Newtonsoft.Json.JsonConvert.SerializeObject(this);
             string response = this.HttpPost(method, url, data);
             Repmsg repmsg = Newtonsoft.Json.JsonConvert.DeserializeObject(response, typeof(Repmsg)) as Repmsg;
             bool result;

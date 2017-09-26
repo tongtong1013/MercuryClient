@@ -39,64 +39,112 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.pbFriendPhoto = new System.Windows.Forms.PictureBox();
-            this.plFriend = new System.Windows.Forms.Panel();
-            this.lbFriendName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFriendPhoto)).BeginInit();
-            this.plFriend.SuspendLayout();
+            this.plMyInfo = new System.Windows.Forms.Panel();
+            this.lbSign = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.pbPhoto = new System.Windows.Forms.PictureBox();
+            this.plTool = new System.Windows.Forms.Panel();
+            this.lbAddFriends = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.plMyInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
+            this.plTool.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pbFriendPhoto
+            // plMyInfo
             // 
-            this.pbFriendPhoto.Location = new System.Drawing.Point(3, 3);
-            this.pbFriendPhoto.Name = "pbFriendPhoto";
-            this.pbFriendPhoto.Size = new System.Drawing.Size(80, 80);
-            this.pbFriendPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFriendPhoto.TabIndex = 0;
-            this.pbFriendPhoto.TabStop = false;
-            this.pbFriendPhoto.DoubleClick += new System.EventHandler(this.plFriend_DoubleClick);
+            this.plMyInfo.Controls.Add(this.lbSign);
+            this.plMyInfo.Controls.Add(this.lbName);
+            this.plMyInfo.Controls.Add(this.pbPhoto);
+            this.plMyInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plMyInfo.Location = new System.Drawing.Point(0, 0);
+            this.plMyInfo.Name = "plMyInfo";
+            this.plMyInfo.Size = new System.Drawing.Size(388, 100);
+            this.plMyInfo.TabIndex = 0;
             // 
-            // plFriend
+            // lbSign
             // 
-            this.plFriend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.plFriend.Controls.Add(this.lbFriendName);
-            this.plFriend.Controls.Add(this.pbFriendPhoto);
-            this.plFriend.Location = new System.Drawing.Point(49, 68);
-            this.plFriend.Name = "plFriend";
-            this.plFriend.Size = new System.Drawing.Size(200, 86);
-            this.plFriend.TabIndex = 1;
-            this.plFriend.DoubleClick += new System.EventHandler(this.plFriend_DoubleClick);
+            this.lbSign.AutoSize = true;
+            this.lbSign.Location = new System.Drawing.Point(117, 61);
+            this.lbSign.Name = "lbSign";
+            this.lbSign.Size = new System.Drawing.Size(80, 18);
+            this.lbSign.TabIndex = 2;
+            this.lbSign.Text = "个性签名";
             // 
-            // lbFriendName
+            // lbName
             // 
-            this.lbFriendName.AutoSize = true;
-            this.lbFriendName.Location = new System.Drawing.Point(89, 40);
-            this.lbFriendName.Name = "lbFriendName";
-            this.lbFriendName.Size = new System.Drawing.Size(44, 18);
-            this.lbFriendName.TabIndex = 2;
-            this.lbFriendName.Text = "师父";
-            this.lbFriendName.DoubleClick += new System.EventHandler(this.plFriend_DoubleClick);
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(117, 21);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(80, 18);
+            this.lbName.TabIndex = 1;
+            this.lbName.Text = "个人名称";
+            // 
+            // pbPhoto
+            // 
+            this.pbPhoto.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbPhoto.Location = new System.Drawing.Point(0, 0);
+            this.pbPhoto.Name = "pbPhoto";
+            this.pbPhoto.Size = new System.Drawing.Size(100, 100);
+            this.pbPhoto.TabIndex = 0;
+            this.pbPhoto.TabStop = false;
+            // 
+            // plTool
+            // 
+            this.plTool.Controls.Add(this.lbAddFriends);
+            this.plTool.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plTool.Location = new System.Drawing.Point(0, 584);
+            this.plTool.Name = "plTool";
+            this.plTool.Size = new System.Drawing.Size(388, 50);
+            this.plTool.TabIndex = 2;
+            // 
+            // lbAddFriends
+            // 
+            this.lbAddFriends.AutoSize = true;
+            this.lbAddFriends.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbAddFriends.Location = new System.Drawing.Point(12, 16);
+            this.lbAddFriends.Name = "lbAddFriends";
+            this.lbAddFriends.Size = new System.Drawing.Size(62, 18);
+            this.lbAddFriends.TabIndex = 4;
+            this.lbAddFriends.Text = "加好友";
+            this.lbAddFriends.Click += new System.EventHandler(this.lbAddFriends_Click);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 100);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(388, 484);
+            this.treeView1.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 634);
-            this.Controls.Add(this.plFriend);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.plTool);
+            this.Controls.Add(this.plMyInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Mercury";
-            ((System.ComponentModel.ISupportInitialize)(this.pbFriendPhoto)).EndInit();
-            this.plFriend.ResumeLayout(false);
-            this.plFriend.PerformLayout();
+            this.plMyInfo.ResumeLayout(false);
+            this.plMyInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
+            this.plTool.ResumeLayout(false);
+            this.plTool.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbFriendPhoto;
-        private System.Windows.Forms.Panel plFriend;
-        private System.Windows.Forms.Label lbFriendName;
+        private System.Windows.Forms.Panel plMyInfo;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.PictureBox pbPhoto;
+        private System.Windows.Forms.Label lbSign;
+        private System.Windows.Forms.Panel plTool;
+        private System.Windows.Forms.Label lbAddFriends;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

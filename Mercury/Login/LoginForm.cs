@@ -45,7 +45,7 @@ namespace Mercury
             if (result)
             {
                 this.Close();
-                new Thread(() => Application.Run(new MainForm())).Start();
+                new Thread(() => Application.Run(new MainForm(ls.id))).Start();
             }
             else
             {

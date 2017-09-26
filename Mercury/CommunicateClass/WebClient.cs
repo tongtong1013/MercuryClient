@@ -15,8 +15,8 @@ namespace Mercury
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
 
             request.Method = method;
-            //request.ContentType = "application/json;charset=utf-8";
-            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentType = "application/json;charset=utf-8";
+            //request.ContentType = "application/x-www-form-urlencoded";
 
             byte[] postdatabyte = Encoding.UTF8.GetBytes(data);
             request.ContentLength = postdatabyte.Length;
@@ -35,5 +35,28 @@ namespace Mercury
             streamReader.Dispose();
             return strResponse;
         }
+
+        protected string HttpGet(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+
+            request.Method = "GET";
+            //request.ContentType = "application/json;charset=utf-8";
+            //request.ContentType = "application/x-www-form-urlencoded";
+
+            //Stream requestStream = request.GetRequestStream();
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            StreamReader streamReader = new StreamReader(responseStream);
+            string strResponse = streamReader.ReadToEnd();
+            Console.WriteLine(strResponse);
+            //requestStream.Dispose();
+            response.Dispose();
+            responseStream.Dispose();
+            streamReader.Dispose();
+            return strResponse;
+        }
+
     }
 }

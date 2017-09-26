@@ -52,7 +52,7 @@
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(356, 28);
             this.tbID.TabIndex = 2;
-            this.tbID.Text = "359805121";
+            this.tbID.Text = "tongtong";
             // 
             // btnLogin
             // 
@@ -129,7 +129,7 @@
             this.lbRegister.Text = "注册新用户";
             this.lbRegister.Click += new System.EventHandler(this.lbRegister_Click);
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +142,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbID);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Mercury";
             ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);

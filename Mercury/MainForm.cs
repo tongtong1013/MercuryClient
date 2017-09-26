@@ -14,17 +14,32 @@ namespace Mercury
     {
         private Bitmap _tempFriend = Properties.Resources.tx1;
         private Icon _star = Properties.Resources.star;
-        public MainForm()
+        private string _id;
+        public MainForm(string id)
         {
             InitializeComponent();
-            this.pbFriendPhoto.Image = _tempFriend;
             this.Icon = _star;
+            _id = id;
+            GetOwnerInfo();
         }
 
-        private void plFriend_DoubleClick(object sender, EventArgs e)
+        private void GetOwnerInfo()
         {
-            ChatForm cf = new ChatForm();
-            cf.Show();
+            PersonInfo pi = new PersonInfo();
+            pi.ID = _id;
+            pi = pi.Search();
+            this.lbName.Text = pi.Name;
+            this.lbSign.Text = pi.Sign == "" ? "这个人很懒，神马都没有留下～" : pi.Sign;
+        }
+
+        private void GetFriendsInfo()
+        {
+
+        }
+
+        private void lbAddFriends_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
