@@ -62,6 +62,8 @@
     <Compile Include="FriendCtrl.Designer.cs">
       <DependentUpon>FriendCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Info\GroupInfo.cs" />
+    <Compile Include="Info\Relationship.cs" />
     <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -45,7 +45,7 @@
             this.pbPhoto = new System.Windows.Forms.PictureBox();
             this.plTool = new System.Windows.Forms.Panel();
             this.lbAddFriends = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvFriends = new System.Windows.Forms.TreeView();
             this.plMyInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.plTool.SuspendLayout();
@@ -109,25 +109,27 @@
             this.lbAddFriends.Text = "加好友";
             this.lbAddFriends.Click += new System.EventHandler(this.lbAddFriends_Click);
             // 
-            // treeView1
+            // tvFriends
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 100);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(388, 484);
-            this.treeView1.TabIndex = 3;
+            this.tvFriends.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvFriends.Location = new System.Drawing.Point(0, 100);
+            this.tvFriends.Name = "tvFriends";
+            this.tvFriends.Size = new System.Drawing.Size(388, 484);
+            this.tvFriends.TabIndex = 3;
+            this.tvFriends.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvFriends_NodeMouseDoubleClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 634);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.tvFriends);
             this.Controls.Add(this.plTool);
             this.Controls.Add(this.plMyInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Mercury";
+            this.TopMost = true;
             this.plMyInfo.ResumeLayout(false);
             this.plMyInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
@@ -145,6 +147,6 @@
         private System.Windows.Forms.Label lbSign;
         private System.Windows.Forms.Panel plTool;
         private System.Windows.Forms.Label lbAddFriends;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvFriends;
     }
 }

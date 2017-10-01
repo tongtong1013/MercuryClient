@@ -12,9 +12,7 @@ namespace Mercury
 {
     public partial class ChatForm : Form
     {
-        private ChatForm _cf;
-
-        private static string _id = "";
+        private string _id;
         public string ID
         {
             get
@@ -22,25 +20,13 @@ namespace Mercury
                 return _id;
             }
         }
-        
-
-        public ChatForm(string id)
+        private PersonInfo _personInfo;
+        public ChatForm(string id, PersonInfo personInfo)
         {
-            //_id = id;
-            //foreach (var item in Application.OpenForms)
-            //{
-            //    if (item is ChatForm)
-            //    {
-            //        if ((item as ChatForm).ID == id)
-            //        {
-            //        }
-            //    }
-            //}
-            //if (null == _cf)
-            //{
-            //    _cf = new ChatForm();
-            //}
             InitializeComponent();
+            _id = id;
+            _personInfo = personInfo;
+            this.Text = "与 " + _personInfo.Name +" 对话中...";
         }
 
         private void btnSend_Click(object sender, EventArgs e)
